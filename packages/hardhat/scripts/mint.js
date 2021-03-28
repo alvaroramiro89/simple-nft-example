@@ -12,194 +12,161 @@ const delayMS = 1000 //sometimes xDAI needs a 6000ms break lol 😅
 const main = async () => {
 
   // ADDRESS TO MINT TO:
-  const toAddress = "0x21547749f056f2f9fA092CA94879FE86eF0cfaEd"
+  const toAddress = "0x2501007dfCa40d605C620ed92a6161fEb5A6e18F"
 
   console.log("\n\n 🎫 Minting to "+toAddress+"...\n");
 
   const yourCollectible = await ethers.getContractAt('YourCollectible', fs.readFileSync("./artifacts/YourCollectible.address").toString())
 
 
-  const buffalo = {
-    "description": "It's actually a bison?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/buffalo.jpg",
-    "name": "Buffalo",
+  const pipi = {
+    "description": "El último diez?",
+    "external_url": "https://i.ibb.co/7RdKjmB/romagnoli.jpg",// <-- this can link to a page for the specific file too
+    "image": "https://i.ibb.co/7RdKjmB/romagnoli.jpg",
+    "name": "Leandro Romagnoli",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "green"
+         "trait_type": "Pase",
+         "value": "Pasador legendario"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Superpoder",
+         "value": "Engancha y le pega"
        },
        {
-         "trait_type": "Stamina",
-         "value": 42
+         "trait_type": "Resiliencia a lesiones",
+         "value": "0"
        }
     ]
   }
-  console.log("Uploading buffalo...")
-  const uploaded = await ipfs.add(JSON.stringify(buffalo))
+  console.log("Uploading pipi...")
+  const uploaded = await ipfs.add(JSON.stringify(pipi))
 
-  console.log("Minting buffalo with IPFS hash ("+uploaded.path+")")
+  console.log("Minting pipi with IPFS hash ("+uploaded.path+")")
   await yourCollectible.mintItem(toAddress,uploaded.path,{gasLimit:400000})
 
 
   await sleep(delayMS)
 
 
-  const zebra = {
-    "description": "What is it so worried about?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/zebra.jpg",
-    "name": "Zebra",
+  const gata = {
+    "description": "Mitad hombre mitad animal",
+    "external_url": "https://i.ibb.co/hcy45d9/fernandez.jpg",// <-- this can link to a page for the specific file too
+    "image": "https://i.ibb.co/hcy45d9/fernandez.jpg",
+    "name": "Gata Fernández",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
+         "trait_type": "Pase",
+         "value": "Pura tintura, la pasa más o menos"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Superpoder",
+         "value": "Hace buenas milanesas"
        },
        {
-         "trait_type": "Stamina",
-         "value": 38
+         "trait_type": "Resiliencia a lesiones",
+         "value": "Medio blandito"
        }
     ]
   }
-  console.log("Uploading zebra...")
-  const uploadedzebra = await ipfs.add(JSON.stringify(zebra))
+  console.log("Uploading gata...")
+  const uploadedgata = await ipfs.add(JSON.stringify(gata))
 
-  console.log("Minting zebra with IPFS hash ("+uploadedzebra.path+")")
-  await yourCollectible.mintItem(toAddress,uploadedzebra.path,{gasLimit:400000})
+  console.log("Minting gata with IPFS hash ("+uploadedgata.path+")")
+  await yourCollectible.mintItem(toAddress,uploadedgata.path,{gasLimit:400000})
 
 
 
   await sleep(delayMS)
 
 
-  const rhino = {
-    "description": "What a horn!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/rhino.jpg",
-    "name": "Rhino",
+  const tuiti = {
+    "description": "Un SIN fronteras",
+    "external_url": "https://i.ibb.co/Yc6rcj7/carrario.jpg",// <-- this can link to a page for the specific file too
+    "image": "https://i.ibb.co/Yc6rcj7/carrario.jpg",
+    "name": "Silvio Carrario",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "pink"
+         "trait_type": "Pase",
+         "value": "La pasa como puede"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Superpoder",
+         "value": "Jugó hasta en la luna"
        },
        {
-         "trait_type": "Stamina",
-         "value": 22
+         "trait_type": "Resiliencia a lesiones",
+         "value": "se la banca"
        }
     ]
   }
-  console.log("Uploading rhino...")
-  const uploadedrhino = await ipfs.add(JSON.stringify(rhino))
+  console.log("Uploading tuiti...")
+  const uploadedtuiti = await ipfs.add(JSON.stringify(tuiti))
 
-  console.log("Minting rhino with IPFS hash ("+uploadedrhino.path+")")
-  await yourCollectible.mintItem(toAddress,uploadedrhino.path,{gasLimit:400000})
+  console.log("Minting tuiti with IPFS hash ("+uploadedtuiti.path+")")
+  await yourCollectible.mintItem(toAddress,uploadedtuiti.path,{gasLimit:400000})
 
 
 
   await sleep(delayMS)
 
 
-  const fish = {
-    "description": "Is that an underbyte?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/fish.jpg",
-    "name": "Fish",
+  const olave = {
+    "description": "No pasa un psicotécnico",
+    "external_url": "https://i.ibb.co/1vYJywC/olave.jpg",// <-- this can link to a page for the specific file too
+    "image": "https://i.ibb.co/1vYJywC/olave.jpg",
+    "name": "Juan Carlos Olave",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
+         "trait_type": "Pase",
+         "value": "con la mano"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Superpoder",
+         "value": "Es el primo de Rodrigo"
        },
        {
-         "trait_type": "Stamina",
-         "value": 15
+         "trait_type": "Resiliencia a lesiones",
+         "value": "Nunca se lesionó"
        }
     ]
   }
-  console.log("Uploading fish...")
-  const uploadedfish = await ipfs.add(JSON.stringify(fish))
+  console.log("Uploading olave...")
+  const uploadedolave = await ipfs.add(JSON.stringify(olave))
 
-  console.log("Minting fish with IPFS hash ("+uploadedfish.path+")")
-  await yourCollectible.mintItem(toAddress,uploadedfish.path,{gasLimit:400000})
+  console.log("Minting olave with IPFS hash ("+uploadedolave.path+")")
+  await yourCollectible.mintItem(toAddress,uploadedolave.path,{gasLimit:400000})
 
 
 
   await sleep(delayMS)
 
 
-  const flamingo = {
-    "description": "So delicate.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/flamingo.jpg",
-    "name": "Flamingo",
+  const sapito = {
+    "description": "Anfibio hiperhabilioso",
+    "external_url": "https://i.ibb.co/ZxSHWdk/encina.jpg",// <-- this can link to a page for the specific file too
+    "image": "https://i.ibb.co/ZxSHWdk/encina.jpg",
+    "name": "Hernán Sapito Encina",
     "attributes": [
        {
-         "trait_type": "BackgroundColor",
-         "value": "black"
+         "trait_type": "Pase",
+         "value": "Pasador lírico"
        },
        {
-         "trait_type": "Eyes",
-         "value": "googly"
+         "trait_type": "Superpoder",
+         "value": "Hace jugar a los muertos"
        },
        {
-         "trait_type": "Stamina",
-         "value": 6
+         "trait_type": "Resiliencia a lesiones",
+         "value": "Le falta entrenamiento físico, asique se lesiona"
        }
     ]
   }
-  console.log("Uploading flamingo...")
-  const uploadedflamingo = await ipfs.add(JSON.stringify(flamingo))
+  console.log("Uploading sapito...")
+  const uploadedsapito = await ipfs.add(JSON.stringify(sapito))
 
-  console.log("Minting flamingo with IPFS hash ("+uploadedflamingo.path+")")
-  await yourCollectible.mintItem(toAddress,uploadedflamingo.path,{gasLimit:400000})
-
-
-
-
-
-  const godzilla = {
-    "description": "Raaaar!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/",// <-- this can link to a page for the specific file too
-    "image": "https://austingriffith.com/images/paintings/godzilla.jpg",
-    "name": "Godzilla",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "orange"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 99
-       }
-    ]
-  }
-  console.log("Uploading godzilla...")
-  const uploadedgodzilla = await ipfs.add(JSON.stringify(godzilla))
-
-  console.log("Minting godzilla with IPFS hash ("+uploadedgodzilla.path+")")
-  await yourCollectible.mintItem(toAddress,uploadedgodzilla.path,{gasLimit:400000})
-
-
-
+  console.log("Minting sapito with IPFS hash ("+uploadedsapito.path+")")
+  await yourCollectible.mintItem(toAddress,uploadedsapito.path,{gasLimit:400000})
 
   await sleep(delayMS)
 
